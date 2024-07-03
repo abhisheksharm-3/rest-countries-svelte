@@ -18,7 +18,7 @@
       placeholder="Search for a country..."
       bind:value={searchQuery}
       on:input={handleInput}
-      class="p-2 pl-10 shadow-xl border-none rounded-md w-full bg-[#2b3743] h-12"
+      class="p-2 pl-10 shadow-2xl  border-none rounded-md w-full dark:bg-[#2b3743] h-12"
     />
     </div>
   

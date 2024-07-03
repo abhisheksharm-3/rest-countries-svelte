@@ -11,9 +11,9 @@
 
 <DropdownMenu.Root >
   <DropdownMenu.Trigger asChild let:builder>
-    <Button variant="outline" builders={[builder]} class="bg-[#2b3743] border-none h-12">Filter by Region: {selectedRegion}</Button>
+    <Button variant="outline" builders={[builder]} class="dark:bg-[#2b3743] shadow-2xl border-none h-12">Filter by Region: {selectedRegion}</Button>
   </DropdownMenu.Trigger>
-  <DropdownMenu.Content class="w-56 bg-[#2b3743]">
+  <DropdownMenu.Content class="w-56 dark:bg-[#2b3743]">
     <DropdownMenu.Label>Select Region</DropdownMenu.Label>
     <DropdownMenu.Separator />
     <DropdownMenu.RadioGroup bind:value={selectedRegion}>
