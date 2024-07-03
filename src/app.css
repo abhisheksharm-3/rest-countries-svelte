@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%; /* Very Light Gray (Light Mode Background) */
+    --foreground: 200 15% 8%; /* Very Dark Blue (Light Mode Text) */
+
+    --muted: 0 0% 52%; /* Dark Gray (Light Mode Input) */
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --popover: 0 0% 100%; /* White (Light Mode Elements) */
+    --popover-foreground: 200 15% 8%; /* Very Dark Blue (Light Mode Text) */
+
+    --card: 0 0% 100%; /* White (Light Mode Elements) */
+    --card-foreground: 200 15% 8%; /* Very Dark Blue (Light Mode Text) */
+
+    --border: 240 5.9% 90%;
+    --input: 0 0% 52%; /* Dark Gray (Light Mode Input) */
+
+    --primary: 0 0% 100%; /* White (Light Mode Elements) */
+    --primary-foreground: 200 15% 8%; /* Very Dark Blue (Light Mode Text) */
+
+    --secondary: 0 0% 98%; /* Very Light Gray (Light Mode Background) */
+    --secondary-foreground: 200 15% 8%; /* Very Dark Blue (Light Mode Text) */
+
+    --accent: 0 0% 98%; /* Very Light Gray (Light Mode Background) */
+    --accent-foreground: 200 15% 8%; /* Very Dark Blue (Light Mode Text) */
+
+    --destructive: 0 72.2% 50.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --ring: 240 10% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 207 26% 17%; /* Very Dark Blue (Dark Mode Background) */
+    --foreground: 0 0% 100%; /* White (Dark Mode Text) */
+
+    --muted: 209 23% 22%; /* Dark Blue (Dark Mode Elements) */
+    --muted-foreground: 240 5% 64.9%;
+
+    --popover: 209 23% 22%; /* Dark Blue (Dark Mode Elements) */
+    --popover-foreground: 0 0% 100%; /* White (Dark Mode Text) */
+
+    --card: 209 23% 22%; /* Dark Blue (Dark Mode Elements) */
+    --card-foreground: 0 0% 100%; /* White (Dark Mode Text) */
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+
+    --primary: 0 0% 100%; /* White (Dark Mode Text) */
+    --primary-foreground: 209 23% 22%; /* Dark Blue (Dark Mode Elements) */
+
+    --secondary: 207 26% 17%; /* Very Dark Blue (Dark Mode Background) */
+    --secondary-foreground: 0 0% 100%; /* White (Dark Mode Text) */
+
+    --accent: 207 26% 17%; /* Very Dark Blue (Dark Mode Background) */
+    --accent-foreground: 0 0% 100%; /* White (Dark Mode Text) */
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
