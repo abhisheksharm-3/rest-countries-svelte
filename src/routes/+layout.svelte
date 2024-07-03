@@ -11,6 +11,8 @@
   type Mode = "light" | "dark";
 
   let currentMode: Mode = "dark";
+
+  
   
 
   // Update the mode based on the ModeWatcher
@@ -34,6 +36,9 @@
     currentMode = "dark";
   }
 </script>
+<svelte:head>
+    <title>REST Countries - Svelte</title>
+</svelte:head>
 
 <div class="w-screen dark:bg-[#2b3743] mb-12 shadow-xl">
   <nav class="flex justify-between py-4 container items-center">
