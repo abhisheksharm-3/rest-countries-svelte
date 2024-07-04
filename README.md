@@ -12,28 +12,25 @@
 
 <div style="text-align: center;">
   <figure>
-    <img src="https://raw.githubusercontent.com/abhisheksharm-3/rest-countries-svelte/main/static/demo/desktop-dark.png" alt="Desktop Dark Mode" >
-    <figcaption style="text-align: center; margin-top: 8px;">Desktop Dark Mode</figcaption>
+    <img src="https://raw.githubusercontent.com/abhisheksharm-3/rest-countries-svelte/main/static/demo/desktop-dark.png" alt="Desktop Dark Mode">
+    <figcaption style="margin-top: 8px;">Desktop Dark Mode</figcaption>
   </figure>
-</div>
 
-<div style="text-align: center;">
   <figure>
-    <img src="https://raw.githubusercontent.com/abhisheksharm-3/rest-countries-svelte/main/static/demo/desktop-light.png" alt="Desktop Light Mode" >
-    <figcaption style="text-align: center; margin-top: 8px;">Desktop Light Mode</figcaption>
+    <img src="https://raw.githubusercontent.com/abhisheksharm-3/rest-countries-svelte/main/static/demo/desktop-light.png" alt="Desktop Light Mode">
+    <figcaption style="margin-top: 8px;">Desktop Light Mode</figcaption>
+  </figure>
+
+  <figure>
+    <img src="https://raw.githubusercontent.com/abhisheksharm-3/rest-countries-svelte/main/static/demo/mobile-dark.png" alt="Mobile Dark Mode" width="377" height="820">
+    <figcaption style="margin-top: 8px;">Mobile Dark Mode</figcaption>
+  </figure>
+
+  <figure>
+    <img src="https://raw.githubusercontent.com/abhisheksharm-3/rest-countries-svelte/main/static/demo/mobile-light.png" alt="Mobile Light Mode" width="377" height="820">
+    <figcaption style="margin-top: 8px;">Mobile Light Mode</figcaption>
   </figure>
 </div>
-
-  <figure style="text-align: center;">
-    <img src="https://raw.githubusercontent.com/abhisheksharm-3/rest-countries-svelte/main/static/demo/mobile-dark.png" alt="Mobile Dark Mode" width="377" height="820">
-    <figcaption style="text-align: center; margin-top: 8px;">Mobile Dark Mode</figcaption>
-  </figure>
-
-  <figure style="text-align: center;">
-    <img src="https://raw.githubusercontent.com/abhisheksharm-3/rest-countries-svelte/main/static/demo/mobile-light.png" alt="Mobile Light Mode" width="377" height="820">
-    <figcaption style="text-align: center; margin-top: 8px;">Mobile Light Mode</figcaption>
-  </figure>
-
 
 <h2>🛠️ Installation Steps:</h2>
 
