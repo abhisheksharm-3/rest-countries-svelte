@@ -1,38 +1,73 @@
-# create-svelte
+<h1 align="center" id="title">REST Countries SvleteKit</h1>
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+<p align="center"><img src="https://socialify.git.ci/abhisheksharm-3/rest-countries-svelte/image?description=1&amp;descriptionEditable=SvelteKit%20website%20using%20the%20REST%20Countries%20API%20for%20exploring%20detailed%20country%20information.&amp;font=Source%20Code%20Pro&amp;language=1&amp;name=1&amp;owner=1&amp;pattern=Charlie%20Brown&amp;theme=Dark" alt="project-image"></p>
 
-## Creating a project
+<p id="description">SvelteKit website using the REST Countries API for exploring detailed country information.</p>
 
-If you're seeing this, you've probably already done this step. Congrats!
+<h2>🚀 Demo</h2>
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+[https://restcountriesvelte.vercel.app/](https://restcountriesvelte.vercel.app/)
 
-# create a new project in my-app
-npm create svelte@latest my-app
+<h2>Project Screenshots:</h2>
+
+<div style="text-align: center;">
+  <figure>
+    <img src="https://raw.githubusercontent.com/abhisheksharm-3/rest-countries-svelte/main/static/demo/desktop-dark.png" alt="Desktop Dark Mode" width="1919" height="910">
+    <figcaption style="text-align: center; margin-top: 8px;">Desktop Dark Mode</figcaption>
+  </figure>
+</div>
+
+<div style="text-align: center;">
+  <figure>
+    <img src="https://raw.githubusercontent.com/abhisheksharm-3/rest-countries-svelte/main/static/demo/desktop-light.png" alt="Desktop Light Mode" width="1919" height="910">
+    <figcaption style="text-align: center; margin-top: 8px;">Desktop Light Mode</figcaption>
+  </figure>
+</div>
+
+<div style="display: flex; flex-direction: row; justify-content: space-around;">
+  <figure style="text-align: center;">
+    <img src="https://raw.githubusercontent.com/abhisheksharm-3/rest-countries-svelte/main/static/demo/mobile-dark.png" alt="Mobile Dark Mode" width="377" height="820">
+    <figcaption style="text-align: center; margin-top: 8px;">Mobile Dark Mode</figcaption>
+  </figure>
+
+  <figure style="text-align: center;">
+    <img src="https://raw.githubusercontent.com/abhisheksharm-3/rest-countries-svelte/main/static/demo/mobile-light.png" alt="Mobile Light Mode" width="377" height="820">
+    <figcaption style="text-align: center; margin-top: 8px;">Mobile Light Mode</figcaption>
+  </figure>
+</div>
+
+<h2>🛠️ Installation Steps:</h2>
+
+<p>1. Clone the Repository</p>
+
+```
+git clone https://github.com/abhisheksharm-3/rest-countries-svelte.git
 ```
 
-## Developing
+<p>2. Switch to Cloned Directory</p>
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+```
+cd rest-countries-svelte
 ```
 
-## Building
+<p>3. Use your package manager to install dependencies</p>
 
-To create a production version of your app:
-
-```bash
-npm run build
+```
+bun install
 ```
 
-You can preview the production build with `npm run preview`.
+<p>4. Start the Development Server</p>
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+```
+bun dev
+```
+
+<h2>💻 Built with</h2>
+
+Technologies used in the project:
+
+- SvelteKit: Framework used to build the web application.
+- TypeScript: Language used for writing the code.
+- REST Countries API: External API used to fetch country data.
+- Tailwind CSS: Utility-first CSS framework used for styling.
+- shadcn-svelte: Port of shadcn for Svelte used for Consistent Design
