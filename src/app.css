@@ -1,70 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 98%; /* Very Light Gray (Light Mode Background) */
-    --foreground: 200 15% 8%; /* Very Dark Blue (Light Mode Text) */
+    /* Light mode - Minimalist neutral palette */
+    --background: 0 0% 98%; /* Off-white background */
+    --foreground: 0 0% 12%; /* Near-black text for contrast */
 
-    --muted: 0 0% 52%; /* Dark Gray (Light Mode Input) */
-    --muted-foreground: 240 3.8% 46.1%;
+    --muted: 0 0% 90%; /* Light gray for subtle elements */
+    --muted-foreground: 0 0% 45%; /* Mid-gray text for secondary information */
 
-    --popover: 0 0% 100%; /* White (Light Mode Elements) */
-    --popover-foreground: 200 15% 8%; /* Very Dark Blue (Light Mode Text) */
+    --popover: 0 0% 100%; /* Pure white for floating elements */
+    --popover-foreground: 0 0% 12%; /* Near-black text */
 
-    --card: 0 0% 100%; /* White (Light Mode Elements) */
-    --card-foreground: 200 15% 8%; /* Very Dark Blue (Light Mode Text) */
+    --card: 0 0% 100%; /* Pure white for card backgrounds */
+    --card-foreground: 0 0% 12%; /* Near-black text */
 
-    --border: 240 5.9% 90%;
-    --input: 0 0% 52%; /* Dark Gray (Light Mode Input) */
+    --border: 0 0% 92%; /* Very light gray borders */
+    --input: 0 0% 92%; /* Input borders matching other borders */
 
-    --primary: 0 0% 100%; /* White (Light Mode Elements) */
-    --primary-foreground: 200 15% 8%; /* Very Dark Blue (Light Mode Text) */
+    --primary: 0 0% 12%; /* Near-black for primary actions */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
 
-    --secondary: 0 0% 98%; /* Very Light Gray (Light Mode Background) */
-    --secondary-foreground: 200 15% 8%; /* Very Dark Blue (Light Mode Text) */
+    --secondary: 0 0% 96%; /* Very light gray for secondary elements */
+    --secondary-foreground: 0 0% 12%; /* Near-black text */
 
-    --accent: 0 0% 98%; /* Very Light Gray (Light Mode Background) */
-    --accent-foreground: 200 15% 8%; /* Very Dark Blue (Light Mode Text) */
+    --accent: 0 0% 94%; /* Subtle accent color */
+    --accent-foreground: 0 0% 12%; /* Near-black text */
 
-    --destructive: 0 72.2% 50.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 70% 50%; /* Simplified red */
+    --destructive-foreground: 0 0% 100%;
 
-    --ring: 240 10% 3.9%;
+    --ring: 0 0% 80%; /* Medium gray focus rings */
 
-    --radius: 0.5rem;
+    --radius: 0.25rem; /* Smaller radius for more minimal feel */
   }
 
   .dark {
-    --background: 207 26% 17%; /* Very Dark Blue (Dark Mode Background) */
-    --foreground: 0 0% 100%; /* White (Dark Mode Text) */
+    /* Dark mode - Minimalist dark neutral palette */
+    --background: 0 0% 10%; /* Near-black background */
+    --foreground: 0 0% 96%; /* Off-white text */
 
-    --muted: 209 23% 22%; /* Dark Blue (Dark Mode Elements) */
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 0 0% 18%; /* Dark gray for subtle elements */
+    --muted-foreground: 0 0% 70%; /* Light gray text for secondary information */
 
-    --popover: 209 23% 22%; /* Dark Blue (Dark Mode Elements) */
-    --popover-foreground: 0 0% 100%; /* White (Dark Mode Text) */
+    --popover: 0 0% 14%; /* Very dark gray for floating elements */
+    --popover-foreground: 0 0% 96%; /* Off-white text */
 
-    --card: 209 23% 22%; /* Dark Blue (Dark Mode Elements) */
-    --card-foreground: 0 0% 100%; /* White (Dark Mode Text) */
+    --card: 0 0% 14%; /* Very dark gray for card backgrounds */
+    --card-foreground: 0 0% 96%; /* Off-white text */
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
+    --border: 0 0% 20%; /* Dark gray borders */
+    --input: 0 0% 20%; /* Input borders matching other borders */
 
-    --primary: 0 0% 100%; /* White (Dark Mode Text) */
-    --primary-foreground: 209 23% 22%; /* Dark Blue (Dark Mode Elements) */
+    --primary: 0 0% 96%; /* Off-white for primary actions */
+    --primary-foreground: 0 0% 10%; /* Near-black text on primary */
 
-    --secondary: 207 26% 17%; /* Very Dark Blue (Dark Mode Background) */
-    --secondary-foreground: 0 0% 100%; /* White (Dark Mode Text) */
+    --secondary: 0 0% 16%; /* Dark gray for secondary elements */
+    --secondary-foreground: 0 0% 96%; /* Off-white text */
 
-    --accent: 207 26% 17%; /* Very Dark Blue (Dark Mode Background) */
-    --accent-foreground: 0 0% 100%; /* White (Dark Mode Text) */
+    --accent: 0 0% 18%; /* Subtle dark accent */
+    --accent-foreground: 0 0% 96%; /* Off-white text */
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 70% 45%; /* Simplified red, slightly muted */
+    --destructive-foreground: 0 0% 96%;
 
-    --ring: 240 4.9% 83.9%;
+    --ring: 0 0% 30%; /* Gray focus rings */
   }
 }
 
@@ -72,7 +76,43 @@
   * {
     @apply border-border;
   }
+  
+  html {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    letter-spacing: -0.011em;
+  }
+}
+
+/* Additional minimal style overrides */
+@layer components {
+  .container {
+    @apply max-w-6xl px-4 mx-auto;
+  }
+  
+  /* Cleaner button styles */
+  button, .btn {
+    @apply transition-colors duration-200;
+  }
+  
+  /* Subtle transitions */
+  .transition-minimal {
+    @apply transition-all duration-200 ease-in-out;
+  }
+  
+  /* Refined card styling */
+  .card-minimal {
+    @apply border border-border bg-card p-4 rounded-[var(--radius)];
+  }
+  
+  /* Refined navigation */
+  .nav-item {
+    @apply px-3 py-2 text-sm rounded-[var(--radius)] hover:bg-accent transition-colors;
   }
 }

@@ -8,25 +8,39 @@
     "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Flag_of_the_United_Nations.svg/1280px-Flag_of_the_United_Nations.svg.png";
 </script>
 
-<a href={`/country/${encodeURIComponent(name)}`} class="block">
-  <Card.Root class="flex flex-col h-full rounded-lg shadow-lg hover:-translate-y-1 ease-in-out duration-500 hover:scale-105">
-    <img
-      src={image}
-      alt="{name} flag"
-      class="h-1/2 rounded-t-lg object-cover"
-    />
-    <div class="h-1/2">
-      <Card.Header>
-        <Card.Title class="font-bold text-2xl tracking-wide">{name}</Card.Title>
-      </Card.Header>
-      <Card.Content class="text-sm font-semibold">
-        <p>
-          Population: <span class="text-gray-400 font-normal">{population}</span
-          >
-        </p>
-        <p>Region: <span class="text-gray-400 font-normal">{region}</span></p>
-        <p>Capital: <span class="text-gray-400 font-normal">{capital}</span></p>
-      </Card.Content>
+<a 
+  href={`/country/${encodeURIComponent(name)}`} 
+  class="group block h-full"
+>
+  <Card.Root class="flex flex-col h-full overflow-hidden border-none bg-card relative transition-all duration-300">
+    <div class="aspect-[3/2] w-full relative overflow-hidden">
+      <img
+        src={image}
+        alt="{name} flag"
+        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        loading="lazy"
+      />
     </div>
+    
+    <div class="flex flex-col grow p-5">
+      <h3 class="text-base font-medium mb-3 tracking-tight">{name}</h3>
+      
+      <div class="grid gap-y-1 text-[13px]">
+        <p class="flex">
+          <span class="inline-block w-24 font-medium">Population:</span>
+          <span class="text-muted-foreground">{population}</span>
+        </p>
+        <p class="flex">
+          <span class="inline-block w-24 font-medium">Region:</span>
+          <span class="text-muted-foreground">{region}</span>
+        </p>
+        <p class="flex">
+          <span class="inline-block w-24 font-medium">Capital:</span>
+          <span class="text-muted-foreground">{capital}</span>
+        </p>
+      </div>
+    </div>
+    
+    <div class="absolute inset-0 border border-border opacity-0 group-hover:opacity-100 transition-opacity"></div>
   </Card.Root>
 </a>

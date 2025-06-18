@@ -9,13 +9,8 @@
   import 'remixicon/fonts/remixicon.css'
 
   type Mode = "light" | "dark";
-
   let currentMode: Mode = "dark";
 
-  
-  
-
-  // Update the mode based on the ModeWatcher
   onMount(() => {
     const unsubscribe = mode.subscribe((value) => {
       currentMode = value || "dark";
@@ -36,42 +31,66 @@
     currentMode = "dark";
   }
 </script>
+
 <svelte:head>
-    <title>REST Countries - Svelte</title>
+  <title>REST Countries - Svelte</title>
 </svelte:head>
 
-<div class="w-screen dark:bg-[#2b3743] mb-12 shadow-xl">
-  <nav class="flex justify-between py-4 container items-center">
-    <h1 class="text-2xl font-bold">Where in the world?</h1>
-    <div class="flex items-center">
+<div class="w-full dark:bg-neutral-900 light:bg-neutral-50 border-b border-neutral-200 dark:border-neutral-800">
+  <nav class="flex justify-between py-6 container items-center max-w-6xl mx-auto px-4 sm:px-6">
+    <h1 class="text-xl font-normal tracking-tight dark:text-neutral-100 light:text-neutral-900">
+      <span class="font-medium">Where</span> in the world?
+    </h1>
+    
+    <div class="flex items-center gap-2">
       <DropdownMenu.Root>
         <DropdownMenu.Trigger asChild let:builder>
-          <Button builders={[builder]} variant="outline" size="icon">
+          <Button 
+            builders={[builder]} 
+            variant="ghost" 
+            size="sm" 
+            class="h-9 w-9 rounded-full flex items-center justify-center hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+          >
             <Sun
-              class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+              class="h-[1rem] w-[1rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
             />
             <Moon
-              class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+              class="absolute h-[1rem] w-[1rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
             />
             <span class="sr-only">Toggle theme</span>
           </Button>
         </DropdownMenu.Trigger>
-        <DropdownMenu.Content align="end">
-          <DropdownMenu.Item on:click={() => handleSetMode("light")}
-            >Light</DropdownMenu.Item
+        <DropdownMenu.Content align="end" class="min-w-[120px] p-1 rounded-md border border-neutral-200 dark:border-neutral-800">
+          <DropdownMenu.Item 
+            class="flex items-center px-3 py-2 text-sm cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded transition-colors"
+            on:click={() => handleSetMode("light")}
           >
-          <DropdownMenu.Item on:click={() => handleSetMode("dark")}
-            >Dark</DropdownMenu.Item
+            Light
+          </DropdownMenu.Item>
+          <DropdownMenu.Item 
+            class="flex items-center px-3 py-2 text-sm cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded transition-colors"
+            on:click={() => handleSetMode("dark")}
           >
-          <DropdownMenu.Item on:click={() => handleResetMode()}
-            >System</DropdownMenu.Item
+            Dark
+          </DropdownMenu.Item>
+          <DropdownMenu.Item 
+            class="flex items-center px-3 py-2 text-sm cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded transition-colors"
+            on:click={() => handleResetMode()}
           >
+            System
+          </DropdownMenu.Item>
         </DropdownMenu.Content>
       </DropdownMenu.Root>
-      <span class="ml-4 capitalize font-light">{currentMode} Mode</span>
+      
+      <span class="text-sm text-neutral-500 dark:text-neutral-400 capitalize">
+        {currentMode}
+      </span>
     </div>
   </nav>
 </div>
+
 <ModeWatcher />
 
-<slot></slot>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+  <slot></slot>
+</main>
