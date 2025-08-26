@@ -1,96 +1,84 @@
 <script lang="ts">
   import "../app.css";
+  import 'remixicon/fonts/remixicon.css'
   import Sun from "svelte-radix/Sun.svelte";
   import Moon from "svelte-radix/Moon.svelte";
-  import { ModeWatcher, resetMode, setMode, mode } from "mode-watcher";
+  import { ModeWatcher, resetMode, setMode } from "mode-watcher";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.ts";
   import Button from "$lib/components/ui/button/button.svelte";
-  import { onMount } from "svelte";
-  import 'remixicon/fonts/remixicon.css'
-
-  type Mode = "light" | "dark";
-  let currentMode: Mode = "dark";
-
-  onMount(() => {
-    const unsubscribe = mode.subscribe((value) => {
-      currentMode = value || "dark";
-    });
-
-    return () => {
-      unsubscribe();
-    };
-  });
-
-  function handleSetMode(newMode: Mode) {
-    setMode(newMode);
-    currentMode = newMode;
-  }
-
-  function handleResetMode() {
-    resetMode();
-    currentMode = "dark";
-  }
 </script>
 
 <svelte:head>
-  <title>REST Countries - Svelte</title>
+  <title>Countries Explorer · Beautiful World Atlas</title>
+  <meta name="description" content="Explore countries around the world with our beautiful, minimal interface">
 </svelte:head>
 
-<div class="w-full dark:bg-neutral-900 light:bg-neutral-50 border-b border-neutral-200 dark:border-neutral-800">
-  <nav class="flex justify-between py-6 container items-center max-w-6xl mx-auto px-4 sm:px-6">
-    <h1 class="text-xl font-normal tracking-tight dark:text-neutral-100 light:text-neutral-900">
-      <span class="font-medium">Where</span> in the world?
-    </h1>
+<div class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl">
+  <nav class="container mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+    <a href="/" class="group flex items-center space-x-3">
+      <div class="flex flex-col">
+        <h1 class="text-lg font-serif font-medium tracking-tight text-foreground transition-colors group-hover:text-foreground/80">
+          Countries Explorer
+        </h1>
+        <p class="hidden text-xs text-muted-foreground sm:block">
+          Discover the world
+        </p>
+      </div>
+    </a>
     
-    <div class="flex items-center gap-2">
+    <div class="flex items-center gap-4">
+      
       <DropdownMenu.Root>
         <DropdownMenu.Trigger asChild let:builder>
           <Button 
             builders={[builder]} 
             variant="ghost" 
             size="sm" 
-            class="h-9 w-9 rounded-full flex items-center justify-center hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+            class="relative h-9 w-9 rounded-lg transition-all duration-200 hover:bg-accent/50 hover:scale-105 active:scale-95"
           >
-            <Sun
-              class="h-[1rem] w-[1rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
-            />
-            <Moon
-              class="absolute h-[1rem] w-[1rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
-            />
+            <Sun class="h-4 w-4 rotate-0 scale-100 transition-all duration-300 dark:-rotate-90 dark:scale-0" />
+            <Moon class="absolute h-4 w-4 rotate-90 scale-0 transition-all duration-300 dark:rotate-0 dark:scale-100" />
             <span class="sr-only">Toggle theme</span>
           </Button>
         </DropdownMenu.Trigger>
-        <DropdownMenu.Content align="end" class="min-w-[120px] p-1 rounded-md border border-neutral-200 dark:border-neutral-800">
+        <DropdownMenu.Content align="end" class="w-36 rounded-xl border border-border/50 bg-popover/95 p-1.5 shadow-xl backdrop-blur-lg">
           <DropdownMenu.Item 
-            class="flex items-center px-3 py-2 text-sm cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded transition-colors"
-            on:click={() => handleSetMode("light")}
+            class="flex cursor-pointer items-center rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200 hover:bg-accent/80 focus:bg-accent/80"
+            on:click={() => setMode("light")}
           >
+            <Sun class="mr-2 h-4 w-4" />
             Light
           </DropdownMenu.Item>
           <DropdownMenu.Item 
-            class="flex items-center px-3 py-2 text-sm cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded transition-colors"
-            on:click={() => handleSetMode("dark")}
+            class="flex cursor-pointer items-center rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200 hover:bg-accent/80 focus:bg-accent/80"
+            on:click={() => setMode("dark")}
           >
+            <Moon class="mr-2 h-4 w-4" />
             Dark
           </DropdownMenu.Item>
           <DropdownMenu.Item 
-            class="flex items-center px-3 py-2 text-sm cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded transition-colors"
-            on:click={() => handleResetMode()}
+            class="flex cursor-pointer items-center rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-200 hover:bg-accent/80 focus:bg-accent/80"
+            on:click={resetMode}
           >
+            <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
             System
           </DropdownMenu.Item>
         </DropdownMenu.Content>
       </DropdownMenu.Root>
-      
-      <span class="text-sm text-neutral-500 dark:text-neutral-400 capitalize">
-        {currentMode}
-      </span>
     </div>
   </nav>
 </div>
 
 <ModeWatcher />
 
-<main class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
-  <slot></slot>
+<main class="relative min-h-[calc(100vh-5rem)]">
+  <div class="mx-auto max-w-7xl px-6 py-8 lg:px-8">
+    <slot />
+  </div>
+  
+  <div class="fixed inset-0 -z-10 opacity-[0.015] dark:opacity-[0.02]">
+    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, rgb(15 23 42) 1px, transparent 0); background-size: 20px 20px;"></div>
+  </div>
 </main>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,69 +6,69 @@
 
 @layer base {
   :root {
-    /* Light mode - Minimalist neutral palette */
-    --background: 0 0% 98%; /* Off-white background */
-    --foreground: 0 0% 12%; /* Near-black text for contrast */
+    /* Enhanced Light mode with improved contrast and subtle accent colors */
+    --background: 0 0% 99%; /* Slightly warmer white background */
+    --foreground: 0 0% 8%; /* Deeper black for better contrast */
 
-    --muted: 0 0% 90%; /* Light gray for subtle elements */
-    --muted-foreground: 0 0% 45%; /* Mid-gray text for secondary information */
+    --muted: 0 0% 94%; /* Softer gray for subtle elements */
+    --muted-foreground: 0 0% 40%; /* Better contrast for secondary text */
 
     --popover: 0 0% 100%; /* Pure white for floating elements */
-    --popover-foreground: 0 0% 12%; /* Near-black text */
+    --popover-foreground: 0 0% 8%; /* Deep black text */
 
     --card: 0 0% 100%; /* Pure white for card backgrounds */
-    --card-foreground: 0 0% 12%; /* Near-black text */
+    --card-foreground: 0 0% 8%; /* Deep black text */
 
-    --border: 0 0% 92%; /* Very light gray borders */
-    --input: 0 0% 92%; /* Input borders matching other borders */
+    --border: 0 0% 89%; /* Slightly more visible borders */
+    --input: 0 0% 89%; /* Input borders matching other borders */
 
-    --primary: 0 0% 12%; /* Near-black for primary actions */
+    --primary: 220 100% 50%; /* Beautiful blue primary */
     --primary-foreground: 0 0% 100%; /* White text on primary */
 
     --secondary: 0 0% 96%; /* Very light gray for secondary elements */
-    --secondary-foreground: 0 0% 12%; /* Near-black text */
+    --secondary-foreground: 0 0% 8%; /* Deep black text */
 
-    --accent: 0 0% 94%; /* Subtle accent color */
-    --accent-foreground: 0 0% 12%; /* Near-black text */
+    --accent: 0 0% 96%; /* Subtle accent color */
+    --accent-foreground: 0 0% 8%; /* Deep black text */
 
-    --destructive: 0 70% 50%; /* Simplified red */
+    --destructive: 0 84% 60%; /* Warm red */
     --destructive-foreground: 0 0% 100%;
 
-    --ring: 0 0% 80%; /* Medium gray focus rings */
+    --ring: 220 100% 50%; /* Primary color focus rings */
 
-    --radius: 0.25rem; /* Smaller radius for more minimal feel */
+    --radius: 0.5rem; /* Slightly larger radius for modern feel */
   }
 
   .dark {
-    /* Dark mode - Minimalist dark neutral palette */
-    --background: 0 0% 10%; /* Near-black background */
-    --foreground: 0 0% 96%; /* Off-white text */
+    /* Enhanced Dark mode with better contrast and depth */
+    --background: 0 0% 6%; /* Rich dark background */
+    --foreground: 0 0% 98%; /* Off-white text for readability */
 
-    --muted: 0 0% 18%; /* Dark gray for subtle elements */
-    --muted-foreground: 0 0% 70%; /* Light gray text for secondary information */
+    --muted: 0 0% 14%; /* Subtle dark gray */
+    --muted-foreground: 0 0% 65%; /* Better contrast for secondary text */
 
-    --popover: 0 0% 14%; /* Very dark gray for floating elements */
-    --popover-foreground: 0 0% 96%; /* Off-white text */
+    --popover: 0 0% 8%; /* Slightly lighter than background */
+    --popover-foreground: 0 0% 98%; /* Off-white text */
 
-    --card: 0 0% 14%; /* Very dark gray for card backgrounds */
-    --card-foreground: 0 0% 96%; /* Off-white text */
+    --card: 0 0% 8%; /* Subtle elevation from background */
+    --card-foreground: 0 0% 98%; /* Off-white text */
 
-    --border: 0 0% 20%; /* Dark gray borders */
-    --input: 0 0% 20%; /* Input borders matching other borders */
+    --border: 0 0% 18%; /* More visible dark borders */
+    --input: 0 0% 18%; /* Input borders matching other borders */
 
-    --primary: 0 0% 96%; /* Off-white for primary actions */
-    --primary-foreground: 0 0% 10%; /* Near-black text on primary */
+    --primary: 220 100% 60%; /* Brighter primary for dark mode */
+    --primary-foreground: 0 0% 6%; /* Dark text on primary */
 
-    --secondary: 0 0% 16%; /* Dark gray for secondary elements */
-    --secondary-foreground: 0 0% 96%; /* Off-white text */
+    --secondary: 0 0% 12%; /* Dark gray for secondary elements */
+    --secondary-foreground: 0 0% 98%; /* Off-white text */
 
-    --accent: 0 0% 18%; /* Subtle dark accent */
-    --accent-foreground: 0 0% 96%; /* Off-white text */
+    --accent: 0 0% 15%; /* Subtle dark accent */
+    --accent-foreground: 0 0% 98%; /* Off-white text */
 
-    --destructive: 0 70% 45%; /* Simplified red, slightly muted */
-    --destructive-foreground: 0 0% 96%;
+    --destructive: 0 84% 65%; /* Slightly brighter red for dark mode */
+    --destructive-foreground: 0 0% 98%;
 
-    --ring: 0 0% 30%; /* Gray focus rings */
+    --ring: 220 100% 60%; /* Primary color focus rings */
   }
 }
 
@@ -78,41 +78,191 @@
   }
   
   html {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
   
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
-    letter-spacing: -0.011em;
+    letter-spacing: -0.01em;
+    line-height: 1.6;
+  }
+  
+  /* Typography hierarchy */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+  
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-sans {
+    font-family: 'Source Sans 3', sans-serif;
+  }
+  
+  /* Improved focus visibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
   }
 }
 
-/* Additional minimal style overrides */
+/* Enhanced animations and utilities */
+@layer utilities {
+  /* Fade up animation for staggered card entrance */
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-up {
+    animation: fade-up 0.6s ease-out forwards;
+    opacity: 0;
+  }
+  
+  /* Fade in animation for elements */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out forwards;
+    opacity: 0;
+  }
+  
+  /* Pulse animation for loading states */
+  @keyframes pulse-subtle {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+  
+  .animate-pulse-subtle {
+    animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  /* Text clamp utilities */
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+  
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  
+  /* Backdrop blur fix for better browser support */
+  .backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  
+  .backdrop-blur-lg {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  
+  .backdrop-blur-xl {
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
+  
+  /* Enhanced tabular numbers for better number alignment */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum';
+  }
+  
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Better selection styling */
+  ::selection {
+    @apply bg-primary/20 text-primary-foreground;
+  }
+  
+  /* Custom scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/30;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-border/80;
+  }
+}
+
 @layer components {
+  /* Enhanced container with better responsive padding */
   .container {
-    @apply max-w-6xl px-4 mx-auto;
+    @apply max-w-7xl px-4 mx-auto sm:px-6 lg:px-8;
   }
   
-  /* Cleaner button styles */
+  /* Refined button styles with better transitions */
   button, .btn {
-    @apply transition-colors duration-200;
+    @apply transition-all duration-200 ease-out;
   }
   
-  /* Subtle transitions */
+  /* Minimal transition utility */
   .transition-minimal {
-    @apply transition-all duration-200 ease-in-out;
+    @apply transition-all duration-200 ease-out;
   }
   
-  /* Refined card styling */
+  /* Enhanced card styling with subtle glass effect */
   .card-minimal {
-    @apply border border-border bg-card p-4 rounded-[var(--radius)];
+    @apply border border-border/40 bg-card/50 backdrop-blur-sm p-6 rounded-lg transition-all duration-300 hover:border-border/80 hover:bg-card/80;
   }
   
-  /* Refined navigation */
+  /* Refined navigation styles */
   .nav-item {
-    @apply px-3 py-2 text-sm rounded-[var(--radius)] hover:bg-accent transition-colors;
+    @apply px-4 py-2.5 text-sm font-medium rounded-lg hover:bg-accent/80 transition-all duration-200;
+  }
+  
+  /* Enhanced input styling */
+  .input-enhanced {
+    @apply bg-card/50 backdrop-blur-sm border-border/40 transition-all duration-200 focus:border-primary/50 focus:bg-card/80 focus:shadow-lg focus:shadow-primary/5 hover:border-border/80 hover:bg-card/70;
+  }
+  
+  /* Glass effect utility */
+  .glass {
+    @apply bg-background/80 backdrop-blur-xl border border-border/40;
+  }
+  
+  /* Gradient text utility */
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-600 via-violet-600 to-purple-600 bg-clip-text text-transparent;
   }
 }

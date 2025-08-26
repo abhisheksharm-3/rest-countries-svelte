@@ -1,12 +1,12 @@
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
-interface BorderCountry {
+export interface BorderCountry {
   code: string;
   name: string;
 }
 
-interface Country {
+export interface DetailedCountry {
   name: string;
   officialName: string;
   nativeNames: string[];
@@ -53,8 +53,6 @@ export const load: PageServerLoad = async ({ params, fetch }) => {
     }
 
     const country = countryData[0];
-    
-    // Extract native names if available
     const nativeNames: string[] = [];
     if (country.name?.nativeName) {
       Object.entries(country.name.nativeName).forEach(([langCode, nameObj]: [string, any]) => {
@@ -64,7 +62,6 @@ export const load: PageServerLoad = async ({ params, fetch }) => {
       });
     }
     
-    // Handle border countries on the server to improve client-side performance
     let borderCountries: BorderCountry[] = [];
     
     if (country.borders && country.borders.length > 0) {
@@ -79,8 +76,6 @@ export const load: PageServerLoad = async ({ params, fetch }) => {
         }));
       }
     }
-    
-    // Extract currency symbol if available
     let currencySymbol: string | undefined;
     if (country.currencies) {
       const firstCurrency = Object.values(country.currencies)[0] as any;
@@ -88,14 +83,12 @@ export const load: PageServerLoad = async ({ params, fetch }) => {
         currencySymbol = firstCurrency.symbol;
       }
     }
-
-    // Extract demonyms in a user-friendly format
     let demonyms: string | undefined;
     if (country.demonyms?.eng) {
       demonyms = `${country.demonyms.eng.m} (male), ${country.demonyms.eng.f} (female)`;
     }
 
-    const formattedCountry: Country = {
+    const formattedCountry: DetailedCountry = {
       name: country.name.common || 'Unknown',
       officialName: country.name.official || country.name.common || 'Unknown',
       nativeNames: nativeNames,
