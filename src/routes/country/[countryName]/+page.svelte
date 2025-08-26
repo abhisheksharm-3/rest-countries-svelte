@@ -11,7 +11,7 @@
   import type { PageData } from "./$types";
 
   export let data: PageData;
-  const { country } = data;
+  $: country = data.country;
   function handleImageError(e: Event): void {
     const target = e.currentTarget as HTMLImageElement;
     target.src = 'https://via.placeholder.com/600x400?text=Image+Not+Available';
